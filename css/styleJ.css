@@ -1,0 +1,776 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat&family=Playfair+Display&display=swap");
+
+:root {
+    --main-color: #769fcd;
+    --second-color: #b9d7ea;
+    --third-color: #d6e6f2;
+    --bg-color: #f7fbfc;
+    --hover-color: #395370;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    font-family: "Montserrat", serif;
+}
+
+body {
+    max-width: 100vw;
+    background-color: var(--bg-color) !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form-control:focus {
+    border: 1px solid var(--main-color) !important;
+    box-shadow: none !important;
+}
+
+/* NOTE: every page should start from this class if that page has header (refer to discoverJ.php) */
+.mainContent {
+    padding-top: 100px;
+    margin-bottom: 20px;
+}
+
+.mainContent.admin {
+    padding-top: 120px;
+    padding-left: 23%;
+    padding-right: 2.88rem;
+}
+
+.marginContent {
+    margin: 0 120px;
+}
+
+@media (max-width: 768px) {
+    .marginContent {
+        margin: 0 60px; /* Adjust the margin value as needed */
+    }
+    .logoContainer {
+        display: none !important;
+    }
+    .mainContent {
+        padding-top: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .marginContent {
+        margin: 60px; /* Adjust the margin value as needed */
+    }
+}
+
+.logoContainer {
+    display: flex;
+}
+
+/* index */
+.homeNavbar {
+    background-color: transparent;
+    transition: all 0.5s;
+}
+
+.homeNavbar .nav-link {
+    color: var(--white);
+}
+
+.homeNavbar .nav-link:hover {
+    color: var(--main-color);
+}
+
+.nav-scrolled {
+    background-color: var(--white);
+    transition: all 0.5s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-scrolled .nav-link {
+    color: var(--main-color);
+}
+.nav-scrolled .nav-link:hover {
+    color: var(--hover-color);
+}
+
+.nav-scrolled .nav-link:focus {
+    color: var(--hover-color) !important;
+}
+
+.logo {
+    font-family: "Cinzel", serif;
+    margin-left: -5px;
+    color: var(--main-color);
+}
+
+.signinBtn {
+    color: var(--white);
+    background-color: var(--main-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.signinBtn:hover {
+    background-color: var(--hover-color);
+}
+
+.profileBtn {
+    color: var(--main-color);
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    width: 35px;
+    height: 35px;
+    text-decoration: none;
+    display: flex;
+}
+
+.homeContent {
+    margin: 50px 100px;
+}
+
+.homeTitle {
+    font-family: "Playfair Display", serif;
+    line-height: 1.5;
+}
+
+.card {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    /* border: none !important; */
+    margin: 0 10px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.cardCategory {
+    color: var(--main-color);
+}
+
+.card-title {
+    font-weight: bold;
+    font-family: "Playfair Display", serif;
+}
+
+.card-text {
+    font-size: 0.875rem;
+}
+
+.card-text-height {
+    min-height: 70px;
+}
+
+.progress {
+    background-color: var(--second-color) !important;
+    height: 0.8rem !important;
+    border-radius: 0 !important;
+}
+
+.progress-bar {
+    background-color: var(--main-color) !important;
+    transition: all 0.5s ease;
+}
+
+.donateBtn {
+    text-decoration: none;
+    color: var(--main-color);
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    transition: all 0.2s ease;
+}
+
+.donateBtn:hover {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+/* login/register */
+.login-container {
+    margin: auto;
+    position: relative;
+    width: 450px;
+}
+.login-container p {
+    font-size: 14px;
+}
+.login-input {
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.login-checkbox {
+    border: 1px solid var(--main-color);
+}
+
+/*Header dropdown*/
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    width: 320px;
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 0.2s;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 330px;
+}
+
+.sub-menu {
+    background-color: var(--white);
+    padding: 15px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    max-height: fit-content;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info h3 {
+    font-weight: 5000;
+    font-size: 1rem;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    object-fit: fill;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+.user-pic {
+    width: 40px;
+    height: 40px;
+    object-fit: fill;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin: 6px 0;
+    color: var(--main-color);
+    transition: all 0.2s ease;
+    border-radius: 0.5rem;
+    padding: 0 10px;
+}
+
+.sub-menu-link p {
+    width: 100%;
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
+    color: var(--light-color);
+    text-transform: capitalize;
+    margin: 0px; /* defaults to 15px for some reason*/
+}
+
+.sub-menu-link img {
+    width: 40px;
+    border-radius: 50%;
+    background: var(--light-bg);
+    padding: 8px;
+    margin-right: 15px;
+}
+
+.sub-menu-link:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+/* Campaign Details */
+.campaign-img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.campaignDetailCard .progress {
+    height: 0.2rem !important;
+}
+
+.campaignShareButton {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    color: var(--white);
+    font-weight: bold;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), var(--second-color));
+}
+
+.campaignDonateBtn {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    color: var(--white);
+    font-weight: bold;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), var(--main-color));
+}
+
+/* User Profile */
+.profileInput .form-control {
+    font-size: 0.75rem;
+}
+
+.profileEditBtn {
+    color: var(--main-color) !important;
+    border: none !important;
+}
+
+.profileEditBtn:hover {
+    color: var(--hover-color) !important;
+}
+
+.profileSaveBtn {
+    color: green !important;
+    border: none !important;
+}
+
+.profileSaveBtn:hover {
+    color: rgb(0, 59, 0) !important;
+}
+
+.profileCancelbtn {
+    color: red !important;
+    border: none !important;
+}
+
+.profileCancelbtn:hover {
+    color: rgb(129, 0, 0) !important;
+}
+
+.profilePictureContainer button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    background-color: var(--main-color);
+    color: var(--white);
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.profilePictureContainer button:hover {
+    background-color: var(--hover-color);
+}
+
+.profilePictureContainer img {
+    transition: all 0.5s ease;
+}
+
+.profilePictureContainer:hover button {
+    opacity: 1;
+}
+
+.profilePictureContainer:hover img {
+    opacity: 0.4;
+}
+
+/* start a campaign */
+
+.chooseCategories .col {
+    text-align: center;
+}
+
+.categoryButton {
+    border: 1px solid #d9d9d9;
+    padding: 6px 20px;
+    border-radius: 50rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-wrap: nowrap;
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+}
+
+.btn-check:checked + .categoryButton {
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+.campaignButtonContainer {
+    position: absolute;
+    top: 88%;
+    width: 85%;
+}
+
+.startCampaignCard {
+    overflow: hidden;
+    position: relative;
+}
+
+.campaignFirstPage,
+.campaignSecondPage,
+.campaignThirdPage,
+.campaignFourthPage {
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+    width: 85%;
+    height: 515px;
+}
+
+.campaignFirstPage {
+    transform: translateX(0);
+}
+
+.campaignSecondPage,
+.campaignThirdPage,
+.campaignFourthPage {
+    transform: translateX(110%);
+}
+
+.backButton {
+    background-color: transparent;
+    color: var(--main-color);
+    transition: all 0.2s ease;
+}
+
+.backButton:hover {
+    color: var(--hover-color);
+}
+
+.alert-main {
+    background-color: var(--main-color) !important;
+    color: var(--white) !important;
+    font-size: 0.81rem !important;
+}
+
+/* Donate Campaign */
+.donationAmountInput span{
+    background-color: transparent !important;
+    font-weight: bold !important;
+}
+
+.donationAmountInput input{
+    border-left: none !important;
+}
+
+.donationAmountInput input:focus{
+    border-left: none !important;
+    border-right: 1px solid #dee2e6 !important;
+    border-top: 1px solid #dee2e6 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+/* Point Shop */
+.shopping-cart {
+    height: 20px;
+    color: var(--main-color);
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.shopping-cart:hover {
+    color: var(--hover-color);
+}
+
+.shopping-cart:hover .cart-indicator {
+    background-color: var(--hover-color);
+}
+
+.cart-indicator {
+    position: absolute;
+    top: -8;
+    right: -8;
+    font-size: 0.5rem;
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 2px;
+    height: 16px;
+    width: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.addCartBtn {
+    background-color: transparent;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    padding: 5px 10px;
+    transition: all 0.2s ease;
+}
+
+.addCartBtn:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+.quantityBtn {
+    color: var(--main-color);
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    padding: 5px;
+    transition: all 0.2s ease;
+}
+
+.quantityBtn:hover {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+.productQuantityInput {
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    width: 60px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+/* cart */
+.backBtn {
+    color: var(--main-color);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.backBtn:hover {
+    color: var(--hover-color);
+}
+
+/* discover */
+.applyFilter {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--white);
+    width: 100%;
+    padding: 15px;
+    border-top: 1px solid var(--main-color);
+}
+
+.applyFilterBtn {
+    color: var(--main-color);
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    padding: 5px 10px;
+    border-radius: 15px;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.applyFilterBtn:hover {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+.resetBtn {
+    color: var(--white);
+    background-color: var(--main-color);
+    padding: 5px 10px;
+    transition: all 0.2s ease;
+}
+
+.resetBtn:hover {
+    background-color: var(--hover-color);
+}
+
+/* admin sidebar */
+.adminSidebar {
+    position: fixed;
+    background-color: var(--white);
+    width: 20%;
+    height: 100vh;
+    box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.75);
+    padding-top: 100px;
+}
+
+.sidebarNavItems {
+    color: var(--main-color);
+    background-color: transparent;
+    text-decoration: none;
+    padding: 1rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.sidebarNavItems.active {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+.sidebarNavItems:hover {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+.adminCampaignCard {
+    width: 85%;
+}
+
+.adminCampaignCard .campaignImage{
+    height: 220px;
+    max-height: 220px;
+    min-width: 280px;
+    max-width: 280px;
+    object-fit: cover;
+}
+
+.userCard {
+    border: 1px solid var(--main-color) !important;
+    padding: 20px 20px;
+    border-radius: 10px !important;
+}
+
+.userCardDetails {
+    padding: 0 20px;
+}
+
+.adminEditUserButton{
+    position: absolute;
+    top: 10;
+    right: 10;
+}
+
+.adminEditUserButton button{
+    color: var(--main-color);
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.adminEditUserButton button:hover{
+    color: var(--hover-color);
+}
+
+.addProductBtn {
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.addProductBtn:hover {
+    background-color: var(--hover-color);
+}
+
+.successAlert {
+    position: fixed !important;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content !important;
+    z-index: 3;
+}
+
+/* access denied */
+.accessDenied {
+    position: fixed;
+    height: calc(100vh - 78px);
+    width: 100vw;
+    margin-top: 78px;
+    background-color: var(--third-color);
+}
+
+.error-title {
+    font-weight: 900;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Adjust the shadow values for your desired boldness */
+    font-size: 10rem;
+    color: var(--main-color);
+    /* color: #7a7a7a */
+}
+
+.backLogin {
+    top:15 ;
+    left: 36%;
+}
+
+.contactContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+}
+
+.buttonGroup {
+    background-color: transparent;
+    color: var(--main-color);
+    padding: 5px 10px;
+    height: fit-content;
+    border: 1px solid var(--main-color);
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.buttonGroup:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+.buttonGroup.active {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+.buttonGroup1 {
+    border-right: none !important;
+    border-radius: 5px 0 0 5px;
+}
+
+.buttonGroup2 {
+    border-radius: 0 5px 5px 0;
+}
+
+.loginAlert {
+    position: absolute !important;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    z-index: 3;
+}
+
+.discoverPagination {
+    width: fit-content;
+}
+
+.copyBtn {
+    background-color: transparent;
+    color: var(--main-color); 
+}
